@@ -1,4 +1,5 @@
 import time
+
 def halal_menu():
     print("Mivel meguntad a munkát, ezért nem csinálod tovább.")
     print("Bementél a házadba, de aztán egy egér futott ki a szekrényed alól.")
@@ -8,16 +9,23 @@ def halal_menu():
     time.sleep(5)
     print("Újrapróbálod? (Igen / Nem)")
     a = input("")
-    if len(a[0]) == "I" or len(a[0]) == "i" or len(a[1]) == "g" or len(a[1]) == "G":
+    b = igen_nem(a)
+    if b == 2:
+        exit()
+    else:
+        return 1
+    
+def igen_nem(b):
+    if b[0] == "I" or b[0] == "i" or b[1] == "g" or b[1] == "G":
         print()
         print("Pár másodperc múlva, le lesz generálva az új játékmeneted.")
         time.sleep(4)
-        open("Body.py")
-    elif len(a[0]) == "n" or len(a[0]) == "N" or len(a[1]) == "e" or len(a[1]) == "E":
+        return 1  
+    elif b[0] == "n" or b[0] == "N" or b[1] == "e" or b[1] == "E":
         print()
         print("Pár másodperc múlva kiléptetlek.")
         time.sleep(4)
-        exit()
+        return 2
     else:
         print()
         print("RAGE QUIT")
