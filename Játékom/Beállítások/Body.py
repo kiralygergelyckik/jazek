@@ -30,7 +30,9 @@ def bevezeto():
     a = input()
     if a == "1":
         os.system('cls')
-        halal_menu()
+        b = halal_menu()
+        if b == 1:
+            main()
     elif a == "2":
         falu()
     elif a == "3":
