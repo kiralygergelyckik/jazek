@@ -1,0 +1,20 @@
+def bevezetes():
+    print()
+    print()
+    print("Üdvözöllek!")
+    print("Ebben a játékban végigmehetsz Gergely legendás útján.")
+    print("De vajon sikerül végigvinned, vagy meghalsz benne, mint mindenki más? Most kiderül!")
+    print("Készen állsz?")
+    print("A folytatáshoz nyomj egy 1-est!")
+
+def kezdes():
+    print("Egyszer, réges-régen, élt egy ember, kinek neve Gergely volt.")
+    print("Körülbelül, 1617-ben, március 14-én, 11 óra, 12. percében és annak 3. másodpercében, éppen a házimunkáját csinálta, amit megunt.")
+    print("Így hát kalandra indult, de vajon hova?")
+    print("Te hova mennél a helyébe? (Számokkal jelöld válaszod)")
+    print()
+    print("1 - Tovább csinálom a házimunkát.")
+    print("2 - Elmegyek, körbenézek a közeli faluban.")
+    print("3 - Beállok szerzetesnek.")
+    print("4 - Bemegyek a házamba.")
+    print("5 - Megkeresem a barátaimat, hátha van kedvük valamit csinálni.")
