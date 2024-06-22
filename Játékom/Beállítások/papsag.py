@@ -7,6 +7,123 @@ from random import randint
 zold = '\033[32m'
 RESET = '\033[0m'
 
+def pap_halal_menu():
+    from halal import halal_menu
+    b = halal_menu()
+    if b == 1:
+        from Body import main, pontszam
+        main(pontszam+1) 
+        os.system('cls')
+    elif b == 2:
+        exit()
+
+def mit_szeretnetek():
+    os.system('cls')
+    print("Jó napot Uram! Egyedül volt a templomban?")
+    print()
+    print("1 - Igen, egyedül voltam!")
+    print("2 - Mesélsz nekik a hangról.")
+    print("3 - elmenekülsz.")
+    a = valasztas(3)
+    os.system('cls')
+    if a == 1:
+        print("Igen, egyedül voltam, miért?")
+        print()
+        print('"Tudja, valaki megölte ezt a papot."')
+        print('"Tudja, ez a pap elrabolt pár gyermeket, akiket rituáékra használt fel."')
+        print('"Biztos nem látott semmit?"')
+        print()
+        print("1 - igen, biztos!")
+        print("2 - Én voltam!")
+        s = valasztas(2)
+        if s == 1:
+            print("A lovagok tovább sétáltak, te visszasétáltál a birtokodhoz.")
+            from menu import kezdes
+            kezdes(0, 1, 0, 1, 0, 0)
+            kezdeti_nehezseg()
+        elif s == 2:
+            print("A lovagok fél percig néztek téged.")
+            time.sleep(2)
+            print("Ezután az egyik előhúzta a kardját és leszúrt.")
+            time.sleep(2)
+            print("Miközben sötétség vesz körül, ennyit hallasz:")
+            time.sleep(2)
+            print()
+            print('"Megölte a szekta vezért, most mi legyen?"')
+            time.sleep(2)
+            print()
+            print("Újra próbálod?")
+            print()
+            print("1 - Igen, megpróbálom mégegyszer!")
+            print("2 - Most léptes ki.")
+            a = valasztas(2)
+            time.sleep(3)
+            if a == 1:
+                from Body import main, pontszam
+                main(pontszam+1)
+            elif a == 2:
+                exit()        
+    elif a == 2:
+        os.system('cls')
+        print("Egy gyermek hangot hallottam a templomból.")
+        print()
+        print("A lovagok egymásra néztek, majd bementek a templomba.")
+        print()
+        print("Mit csinálsz?")
+        print("1 - Hazamegyek.")
+        print("2 - Utánuk megyek.")
+        s = valasztas(2)
+        os.system('cls')
+        if s == 1:
+            os.system('cls')
+            print("Inkább hazaindultál.")
+            print()
+            print("Újra a birtokodon találod magad, hogyan tovább?")
+            print()
+            from menu import kezdes
+            kezdes(0,1,0,0,0,0)
+            kezdeti_nehezseg()
+        elif s == 2:
+            print("Utánuk mentél, ők nem vették észre.")
+            print("Az oltárhoz mentek, majd elfordultak jobbra egy folyosóhoz.")
+            time.sleep(6)
+            print("Követted őket, de a folyosó egyszer csak végetért.")
+            print("Halk nyögéseket hallasz, majd a fal kinyílik elötted.")
+            print("A fal másik végénél a két lovagot látod, egy halott kislánnyal.")
+            print("Mire megnézted volna, az egyik suhintott egyet a kardjával.")
+            time.sleep(8)
+            print()
+            print("Újra próbálod?")
+            print()
+            print("1 - Igen, megpróbálom mégegyszer!")
+            print("2 - Most léptes ki.")
+            a = valasztas(2)
+            time.sleep(3)
+            if a == 1:
+                from Body import main, pontszam
+                main(pontszam+1)
+            elif a == 2:
+                exit()        
+    elif a == 3:
+        os.system('cls')
+        print()
+        print("Gyorsan megpróbálsz elmenekülni.")
+        print("Már egy ideje futsz, aztán egy nyilat érzel a hátadban.")
+        print("Elvéreztél.")
+        time.sleep(2)
+        print()
+        print("Újra próbálod?")
+        print()
+        print("1 - Igen, megpróbálom mégegyszer!")
+        print("2 - Most léptes ki.")
+        a = valasztas(2)
+        time.sleep(3)
+        if a == 1:
+            from Body import main, pontszam
+            main(pontszam+1)
+        elif a == 2:
+            exit()        
+
 def papsag():
     os.system('cls')
     print('"Jaj, Fiam! Papnak állni csak így nem lehet."')
@@ -74,14 +191,7 @@ def kezdeti_nehezseg():
     a = valasztas(4)
     os.system('cls')
     if a == 1:
-        from halal import halal_menu
-        b = halal_menu()
-        if b == 1:
-            from Body import main, pontszam
-            main(pontszam+1) 
-            os.system('cls')
-        elif b == 2:
-            exit()
+        pap_halal_menu()
     elif a == 2:
         from falu import falu
         falu()
@@ -117,7 +227,6 @@ def menekul():
 def templom_elott():
     os.system('cls')
     i = 0
-    print(targyak, tulajdonsag)
     print("Kimentél a templomból.")
     print("A pap eltűnt, csak egy kis vér mennyiség maradt a földön.")
     print("Miközben töprengtél a történteken, hangokat hallasz közeledni.")
